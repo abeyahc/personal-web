@@ -29,10 +29,10 @@ body {
   height: 180px;
   background-position: left center;
   image-rendering: pixelated;
-  animation: play 1s steps(8) infinite;
+  animation: play 5s steps(28) infinite; /* slower loop for 28 frames */
 }
 
 @keyframes play {
   from { background-position: 0px center; }
-  to   { background-position: -2560px center; }
+  to   { background-position: -8960px center; } /* 28 * 320 */
 }
