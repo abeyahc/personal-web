@@ -6,17 +6,25 @@ import "../index.css";
 
 export default function Load() {
   const [isLoading, setIsLoading] = useState(false);
+  const [isZooming, setIsZooming] = useState(false);
 
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    setIsLoading(true);
+    setIsZooming(true);
 
+    // After zoom animation completes, show loading screen
+    setTimeout(() => {
+      setIsZooming(false);
+      setIsLoading(true);
+    }, 800); // Match this to animation duration
+
+    // Navigate after loading
     setTimeout(() => {
       setIsLoading(false);
       console.log("Finished Loading");
       navigate("/home");
-    }, 3000);
+    }, 3800); // 800ms zoom + 3000ms loading
   };
 
   if (isLoading) {
@@ -24,20 +32,25 @@ export default function Load() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-[#242424] gap-6">
-      <div className="relative scale-450 sm:scale-200 md:scale-300 lg:scale-[4] xl:scale-[4.5] 2xl:scale-[5]">
-          <div 
-            className="sprite" 
-            style={{backgroundImage: `url(${sprite})`}} 
-          >
+    <div className="flex flex-col items-center justify-center min-h-screen bg-[#242424] gap-6 overflow-hidden">
+      <div 
+        className={`relative scale-450 sm:scale-200 md:scale-300 lg:scale-[4] xl:scale-[4.5] 2xl:scale-[5] transition-all duration-1000 ease-in-out ${
+          isZooming ? 'scale-[20] opacity-0' : ''
+        }`}
+      >
+        <div 
+          className="sprite" 
+          style={{backgroundImage: `url(${sprite})`}} 
+        >
           <button 
             className="nes-btn absolute top-[95px] left-[123px] font-nes scale-100 is-small"
             onClick={handleLogin}
+            disabled={isZooming}
           >
-          Login
+            Login
           </button>
-          </div>
         </div>
+      </div>
     </div>
   );
 }
