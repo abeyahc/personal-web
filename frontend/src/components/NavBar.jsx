@@ -25,9 +25,32 @@ export default function Navbar() {
 
       {/* Bottom Social Icons */}
       <div className="flex gap-[15px] items-center justify-center mt-auto">
-        <i className="nes-icon github is-medium"></i>
-        <i className="nes-icon linkedin is-medium"></i>
-        <i className="nes-icon instagram is-medium"></i>
+        <a 
+          href="https://github.com/abeyahc" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="hover:opacity-80 transition-opacity"
+        >
+          <i className="nes-icon github is-medium"></i>
+        </a>
+        
+        <a 
+          href="https://linkedin.com/in/abeyah-calpatura" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="hover:opacity-80 transition-opacity"
+        >
+          <i className="nes-icon linkedin is-medium"></i>
+        </a>
+        
+        <a 
+          href="https://instagram.com/abeyahc" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="hover:opacity-80 transition-opacity"
+        >
+          <i className="nes-icon instagram is-medium"></i>
+        </a>
       </div>
     </nav>
   );
