@@ -39,11 +39,11 @@ export default function Load() {
         }`}
       >
         <div 
-          className="sprite" 
+          className="sprite relative" 
           style={{backgroundImage: `url(${sprite})`}} 
         >
           <button 
-            className="nes-btn absolute top-[95px] left-[123px] font-nes scale-100 is-small"
+            className="nes-btn absolute top-[85px] left-[105px] font-nes scale-50 is-small"
             onClick={handleLogin}
             disabled={isZooming}
           >
