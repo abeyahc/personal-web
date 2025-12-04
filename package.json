@@ -4,7 +4,10 @@
   "description": "my personal website",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run dev --workspace frontend",
+    "build": "npm run build --workspace frontend",
+    "preview": "npm run preview --workspace react-frontend"
   },
   "repository": {
     "type": "git",
@@ -17,6 +20,6 @@
   },
   "homepage": "https://github.com/abeyahc/personal-web#readme",
   "workspaces": [
-        "packages/*"
+        "/*"
     ]
 }
