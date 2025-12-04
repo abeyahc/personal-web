@@ -213,7 +213,7 @@ body {
   height: 180px;
   background-position: left center;
   image-rendering: pixelated;
-  animation: play 2s steps(28) infinite; /* 28 frames */
+  animation: play 3s steps(28) infinite; /* 28 frames */
 }
 
 @keyframes play {
