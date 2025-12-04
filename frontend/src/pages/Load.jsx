@@ -62,7 +62,7 @@ function LoadingScreen() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-[#242424] gap-4">
       <i className="nes-icon coin is-large"></i>
-      <p className="font-nes text-white">Loading...</p>
+      <p className="font-nes text-[#ffffff]">Loading...</p>
     </div>
   );
 }
