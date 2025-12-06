@@ -24,7 +24,7 @@ export default function Load() {
       setIsLoading(false);
       console.log("Finished Loading");
       navigate("/home");
-    }, 3800); // 800ms zoom + 3000ms loading
+    }, 1800); // 800ms zoom + 1000ms loading
   };
 
   if (isLoading) {
