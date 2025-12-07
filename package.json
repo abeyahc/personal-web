@@ -21,6 +21,9 @@
   },
   "homepage": "https://github.com/abeyahc/personal-web#readme",
   "workspaces": [
-        "/*"
-    ]
+    "/*"
+  ],
+  "dependencies": {
+    "lightningcss": "^1.30.2"
+  }
 }
