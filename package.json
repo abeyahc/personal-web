@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npm run dev --workspace frontend",
+    "prebuild": "npm rebuild lightningcss",
     "build": "npm run build --workspace frontend",
     "preview": "npm run preview --workspace react-frontend"
   },
