@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <nav className="fixed left-0 top-0 min-h-screen w-[300px]
                     flex flex-col justify-between
-                    bg-[#1d1d1d] border-r-[4px] border-white
+                    bg-[#1d1d1d]
                     px-[32px] py-[48px] z-50">
 
       {/* Top Buttons */}

@@ -34,7 +34,7 @@ export default function Home() {
             <img
               src="/pfp.JPG"
               alt="Profile"
-              className="w-[440px] h-[250px] object-cover border-4 border-white"
+              className="w-[440px] h-[250px] object-cover border-4 border-[#e0e0e0]"
             />
           </div>
         </div>
