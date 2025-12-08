@@ -220,3 +220,17 @@ body {
   from { background-position: 0px center; }
   to   { background-position: -8960px center; } /* 28 frames * 320px = 8960px */
 }
+
+.list-asterisk > li {
+  list-style: none;
+  position: relative;
+  padding-left: 2.5rem;
+}
+
+.list-asterisk > li::before {
+  content: "*";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: bold;
+}
