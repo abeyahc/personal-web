@@ -54,7 +54,8 @@ export default function Home() {
           <div className="border-4 border-[#e0e0e0] bg-[#0d0d0d] flex-col
                           pt-[35px] pb-[35px] px-[90px] w-full text-left max-w-[900px mx-auto">
             <p className="text-[1.05rem] [line-height:2] opacity-90">
-              <span className="text-[#00ffe1] font-bold">*</span> Hi! I'm Abeyah! Currently, I'm a first-gen Filipina student as a senior earning my Bachelor's
+              <span className="text-[#00ffe1] font-bold">*</span> Hi! I'm Abeyah <span className="opacity-70"> (uh-bay-yuh)</span>! 
+              Currently, I'm a first-gen Filipina student as a senior earning my Bachelor's
               in Computer Science at California Polytechnic University of San Luis Obispo!
               I graduated from San Joaquin Delta College with an Associates in Mathematics and
               Interdisciplinary Studies in Mathematics and Sciences in the Summer of 2024. 
