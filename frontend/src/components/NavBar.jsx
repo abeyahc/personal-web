@@ -1,16 +1,25 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import click from "../assets/button_click.mp3"
 import "nes.css/css/nes.min.css";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const audio = new Audio(click);
+
+  const play = () => {
+    audio.currentTime = 0;
+    audio.play();
+  };
+
+
   return (
     <>
       {/* Mobile Hamburger Button */}
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => { play(); setIsOpen(!isOpen); }}
         className="hamburger-btn nes-btn fixed top-1 left-1 z-[60]"
         aria-label="Toggle menu"
       >
@@ -33,15 +42,15 @@ export default function Navbar() {
       >
         {/* Top Buttons */}
         <div className="flex flex-col gap-[32px] nav-buttons-container">
-          <Link to="/home" onClick={() => setIsOpen(false)}>
+          <Link to="/home" onClick={() => { play(); setIsOpen(false); }}>
             <button className="nes-btn w-full is-normal">About Me</button>
           </Link>
 
-          <Link to="/projects" onClick={() => setIsOpen(false)}>
+          <Link to="/projects" onClick={() => { play(); setIsOpen(false); }}>
             <button className="nes-btn w-full is-normal">Projects</button>
           </Link>
 
-          <Link to="/photography" onClick={() => setIsOpen(false)}>
+          <Link to="/photography" onClick={() => { play(); setIsOpen(false); }}>
             <button className="nes-btn w-full is-normal">Photography</button>
           </Link>
         </div>
