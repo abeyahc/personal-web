@@ -84,19 +84,37 @@ export default function Navbar() {
         }
 
         .navbar-menu {
-          transform: translateX(-100%);
+          position: fixed;
+          inset: 0;
+          width: 100vw;
+          height: 100vh;
+
+          transform: translateY(-100%);
+          background-color: #1d1d1d;
+
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          gap: 40px;
         }
 
         .navbar-menu.open {
-          transform: translateX(0);
+          transform: translateY(0);
         }
 
         .nav-buttons-container {
-          padding-top: 88px;
+          width: 100%;
+          max-width: 250px;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          padding: 0;
         }
 
         .mobile-overlay {
-          display: block;
+          display: none;
         }
 
         /* Desktop styles */
@@ -106,15 +124,21 @@ export default function Navbar() {
           }
 
           .navbar-menu {
-            transform: translateX(0) !important;
+            width: 300px !important;
+            height: 100vh !important;
+            inset: auto;
+            left: 0;
+            top: 0;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 48px 32px;
+            transform: none !important;
           }
 
           .nav-buttons-container {
             padding-top: 40px;
-          }
-
-          .mobile-overlay {
-            display: none !important;
+            gap: 32px;
+            max-width: none;
           }
         }
       `}</style>
