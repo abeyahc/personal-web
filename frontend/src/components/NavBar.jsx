@@ -47,7 +47,7 @@ export default function Navbar() {
         </div>
 
         {/* Bottom Social Icons */}
-        <div className="flex gap-[15px] items-center justify-center mt-auto">
+        <div className="social-icons-container flex gap-[15px] items-center justify-center mt-auto">
           <a
             href="https://github.com/abeyahc"
             target="_blank"
@@ -140,6 +140,13 @@ export default function Navbar() {
             gap: 32px;
             max-width: none;
           }
+
+          .social-icons-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+          }
+
         }
       `}</style>
     </>
