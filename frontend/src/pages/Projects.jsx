@@ -1,29 +1,97 @@
+import { useState } from 'react';
 import Navbar from "../components/NavBar";
 
 export default function Projects() {
-    return (
-      <div className="min-h-screen bg-[#242424]">
-        <Navbar />
-        <div className="projects-content min-h-screen text-[#ffffff] flex items-center justify-center">
-          <div className="flex flex-col items-center justify-center text-center">
-            <h1 className="text-2xl mb-4">This is the Projects Page</h1>
-            <p className="text-sm">still a work in progress :D</p>
-          </div>
+  // Sample projects data - replace with your actual projects
+  const [projects] = useState([
+    {
+      id: 1,
+      title: "QUENDS",
+      date: "Summer 2024 - Present",
+      image: "/sandia.png", // Replace with actual image paths
+      description: "Quantification of Uncertainty on ENsemble DataStreams, Research at Sandia National Laboratories"
+    }
+  ]);
+
+  return (
+    <div className="min-h-screen bg-[#242424]">
+      <Navbar />
+      <div className="projects-content min-h-screen text-[#ffffff] p-8">
+        {/* Page Title */}
+        <h1 className="text-5xl font-bold mb-[20px]">
+          Projects
+        </h1>
+
+        {/* Projects Grid */}
+        <div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+          style={{ display: 'grid', gap: '2.5rem' }}
+        >
+          {projects.map((project) => (
+            <div
+              key={project.id}
+              className="project-card
+              overflow-hidden transition-all 
+              duration-300 border-2 border-transparent 
+              "
+            >
+              {/* Project Image */}
+              <div className="w-full h-[300px] flex items-center justify-center pb-[25px]">
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <span className="text-[#666] text-6xl">📁</span>
+                )}
+              </div>
+
+              {/* Project Info */}
+              <div className="p-4">
+                <h2 className="text-base font-bold mb-1">
+                  {project.title}
+                </h2>
+                <p className="text-xs text-[#888] mb-2">
+                  {project.date}
+                </p>
+                <p className="text-sm text-[#ccc]">
+                  {project.description}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
 
-        <style>{`
-          /* Mobile styles (default) */
-          .projects-content {
-            margin-left: 0;
-          }
-
-          /* Desktop styles */
-          @media (min-width: 1024px) {
-            .projects-content {
-              margin-left: 300px;
-            }
-          }
-        `}</style>
+        {/* Empty State if no projects */}
+        {projects.length === 0 && (
+          <div className="flex flex-col items-center justify-center text-center mt-20">
+            <h2 className="text-2xl mb-4">No projects yet</h2>
+            <p className="text-sm text-[#888]">Check back soon for updates!</p>
+          </div>
+        )}
       </div>
-    );
+
+      <style>{`
+        /* Mobile styles (default) */
+        .projects-content {
+          margin-left: 0;
+          margin-right: 2rem;
+          margin-top: 2rem;
+          margin-bottom: 2rem;
+        }
+
+        /* Desktop styles */
+        @media (min-width: 1024px) {
+          .projects-content {
+            margin-left: 350px;
+            margin-right: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+          }
+        }
+      `}</style>
+    </div>
+  );
 }
