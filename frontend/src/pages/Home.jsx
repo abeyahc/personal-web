@@ -60,17 +60,16 @@ export default function Home() {
             </div>
 
             {/* Right side (Photo) */}
-            <div className="photo-container border-4 border-[#e0e0e0] flex-shrink-0 photo-jiggle">
+            <div className="photo-container border-4 border-[#e0e0e0] flex-shrink-0">
               <img
                 key={photos[index]}
                 src={photos[index]}
                 alt="Profile"
-                className={`profile-photo fade-photo object-cover photo-jiggle
+                className={`profile-photo fade-photo object-cover
                   ${photos[index] === "/pfp2.jpeg" ? "pfp2-adjust" : ""}
                 `}
               />
             </div>
-
           </div>
 
           {/* About Me Box */}
