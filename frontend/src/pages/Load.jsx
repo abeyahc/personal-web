@@ -1,31 +1,37 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import sprite from "../assets/personal-sprite.png";
 import { useNavigate } from "react-router-dom";
+import click from "../assets/button_click.mp3";
 import "nes.css/css/nes.min.css";
 import "../index.css";
+
 
 export default function Load() {
   const [isLoading, setIsLoading] = useState(false);
   const [isZooming, setIsZooming] = useState(false);
 
+  const clickSound = useRef(new Audio(click));
+  
   const navigate = useNavigate();
 
   const handleLogin = () => {
+    clickSound.current.currentTime = 0;
+    clickSound.current.volume = 0.3; // optional NES-style subtle click
+    clickSound.current.play();
+
     setIsZooming(true);
 
-    // After zoom animation completes, show loading screen
     setTimeout(() => {
       setIsZooming(false);
       setIsLoading(true);
-    }, 800); // Match this to animation duration
+    }, 800);
 
-    // Navigate after loading
     setTimeout(() => {
       setIsLoading(false);
-      console.log("Finished Loading");
       navigate("/home");
-    }, 1800); // 800ms zoom + 1000ms loading
+    }, 1800);
   };
+
 
   if (isLoading) {
     return <LoadingScreen />;

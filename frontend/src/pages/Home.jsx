@@ -1,7 +1,25 @@
 import Navbar from "../components/NavBar";
 import { Typewriter } from "react-simple-typewriter";
+import { useState, useEffect } from "react";
 
 export default function Home() {
+
+  const photos = [
+    "/pfp.JPG",
+    "/pfp2.jpeg",
+    "/pfp3.jpeg",
+  ];
+
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % photos.length);
+    }, 3000); // change photo every 3s
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#242424]">
       <Navbar />
@@ -42,11 +60,14 @@ export default function Home() {
             </div>
 
             {/* Right side (Photo) */}
-            <div className="photo-container flex-shrink-0">
+            <div className="photo-container border-4 border-[#e0e0e0] flex-shrink-0 photo-jiggle">
               <img
-                src="/pfp.JPG"
+                key={photos[index]}
+                src={photos[index]}
                 alt="Profile"
-                className="profile-photo object-cover border-4 border-[#e0e0e0] photo-jiggle"
+                className={`profile-photo fade-photo object-cover photo-jiggle
+                  ${photos[index] === "/pfp2.jpeg" ? "pfp2-adjust" : ""}
+                `}
               />
             </div>
 
