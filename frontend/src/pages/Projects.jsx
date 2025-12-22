@@ -6,10 +6,10 @@ export default function Projects() {
   const [projects] = useState([
     {
       id: 1,
-      title: "QUENDS",
+      title: "Quantification of Uncertainty on ENsemble DataStreams (QUENDS)",
       date: "Summer 2024 - Present",
       image: "/sandia.png", // Replace with actual image paths
-      description: "Quantification of Uncertainty on ENsemble DataStreams, Research at Sandia National Laboratories"
+      description: "Software Engineering Research at Sandia National Laboratories"
     }
   ]);
 
@@ -36,12 +36,12 @@ export default function Projects() {
               "
             >
               {/* Project Image */}
-              <div className="w-full h-[300px] flex items-center justify-center pb-[25px]">
+              <div className="w-full overflow-hidden pb-[25px]">
                 {project.image ? (
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover"
+                    className="max-w-full h-[305px] object-contain"
                   />
                 ) : (
                   <span className="text-[#666] text-6xl">📁</span>
