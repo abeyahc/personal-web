@@ -26,21 +26,28 @@ export default function Projects() {
             >
               {/* Project Image */}
               <div className="w-full overflow-hidden pb-[25px]">
-                {project.image ? (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img
-                    src={project.image}
+                    src={project.images[0]}
                     alt={project.title}
-                    className="max-w-full h-[305px] object-contain transition-transform duration-300 ease-out
-      hover:scale-105"
+                    className="max-w-full h-[305px] object-contain
+                              transition-transform duration-300 ease-out
+                              hover:scale-105"
                   />
-                  </a>
-                ) : (
-                  <span className="text-[#666] text-6xl">📁</span>
+                </a>
+
+                {project.images.length > 1 && (
+                  <span className="
+                    absolute bottom-2 right-2
+                    text-[12px] px-2 py-1
+                    bg-black/70 border border-[#666]
+                  ">
+                    +{project.images.length - 1} more
+                  </span>
                 )}
               </div>
               {/* Tags */}
