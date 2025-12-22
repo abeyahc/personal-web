@@ -9,7 +9,8 @@ export default function Projects() {
       title: "Quantification of Uncertainty on ENsemble DataStreams (QUENDS)",
       date: "Summer 2024 - Present",
       image: "/sandia.png", // Replace with actual image paths
-      description: "Software Engineering Research at Sandia National Laboratories"
+      description: "Software Engineering Research at Sandia National Laboratories",
+      link: "https://github.com/sandialabs/quends"
     }
   ]);
 
@@ -38,21 +39,33 @@ export default function Projects() {
               {/* Project Image */}
               <div className="w-full overflow-hidden pb-[25px]">
                 {project.image ? (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="max-w-full h-[305px] object-contain"
+                    className="max-w-full h-[305px] object-contain transition-transform duration-300 ease-out
+      hover:scale-105"
                   />
+                  </a>
                 ) : (
                   <span className="text-[#666] text-6xl">📁</span>
                 )}
               </div>
 
               {/* Project Info */}
-              <div className="p-4">
-                <h2 className="text-base font-bold mb-1">
+              <div className="p-4 text-[#ffffff]">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline hover:text-[#e0e0e0]"
+                >
                   {project.title}
-                </h2>
+                </a>
                 <p className="text-xs text-[#888] mb-2">
                   {project.date}
                 </p>

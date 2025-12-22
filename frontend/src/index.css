@@ -252,3 +252,8 @@ body {
 .pfp2-adjust {
   object-position: center 70%; /* move focus up/down */
 }
+
+.nes-text,
+a {
+  color: #ffffff;
+}
