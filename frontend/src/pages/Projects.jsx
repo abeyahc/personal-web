@@ -1,19 +1,7 @@
-import { useState } from 'react';
 import Navbar from "../components/NavBar";
+import { projects } from "../data/projects";
 
 export default function Projects() {
-  // Sample projects data - replace with your actual projects
-  const [projects] = useState([
-    {
-      id: 1,
-      title: "Quantification of Uncertainty on ENsemble DataStreams (QUENDS)",
-      date: "Summer 2024 - Present",
-      image: "/sandia.png", // Replace with actual image paths
-      description: "Software Engineering Research at Sandia National Laboratories",
-      link: "https://github.com/sandialabs/quends"
-    }
-  ]);
-
   return (
     <div className="min-h-screen bg-[#242424]">
       <Navbar />
@@ -55,7 +43,18 @@ export default function Projects() {
                   <span className="text-[#666] text-6xl">📁</span>
                 )}
               </div>
-
+              {/* Tags */}
+              <div className="flex flex-wrap gap-[20px] mb-[15px]">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-[13px] p-[5px] px-2 py-1 border border-[#666]
+                              text-[#ccc] bg-[#1a1a1a]"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
               {/* Project Info */}
               <div className="p-4 text-[#ffffff]">
                 <a
@@ -66,10 +65,10 @@ export default function Projects() {
                 >
                   {project.title}
                 </a>
-                <p className="text-xs text-[#888] mb-2">
+                <p className="text-[12px] text-[#888] mb-2">
                   {project.date}
                 </p>
-                <p className="text-sm text-[#ccc]">
+                <p className="text-[14px] text-[#ccc]">
                   {project.description}
                 </p>
               </div>
