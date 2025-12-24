@@ -20,7 +20,7 @@ export default function Navbar() {
       {/* Mobile Hamburger Button */}
       <button
         onClick={() => { play(); setIsOpen(!isOpen); }}
-        className="hamburger-btn nes-btn fixed top-1 left-1 z-[60]"
+        className="hamburger-btn nes-btn fixed top-4 right-4 z-[60]"
         aria-label="Toggle menu"
       >
         {isOpen ? <X size={25} /> : <Menu size={25} />}
@@ -90,11 +90,15 @@ export default function Navbar() {
         /* Mobile styles (default) */
         .hamburger-btn {
           display: block;
+          position: fixed !important;
+          top: 0.25rem !important;
+          right: 0.25rem !important;
         }
 
         .navbar-menu {
           position: fixed;
-          inset: 0;
+          top: 0;
+          right: 0;
           width: 100vw;
           height: 100vh;
 

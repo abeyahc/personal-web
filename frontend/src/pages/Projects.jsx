@@ -68,7 +68,7 @@ export default function Projects() {
       {/* layout offset */}
       <style>{`
         .projects-content {
-          margin: 2rem;
+          padding: 2rem;
         }
 
         @media (min-width: 1024px) {
