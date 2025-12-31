@@ -26,10 +26,10 @@ export default function Load() {
       setIsLoading(true);
     }, 800);
 
+    // Navigate after animation finishes
     setTimeout(() => {
-      setIsLoading(false);
       navigate("/home");
-    }, 1800);
+    }, 800); // match animation duration
   };
 
 
@@ -57,18 +57,6 @@ export default function Load() {
           </button>
         </div>
       </div>
-    </div>
-  );
-}
-
-// =======================
-// Loading Screen Component
-// =======================
-function LoadingScreen() {
-  return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-[#242424] gap-4">
-      <i className="nes-icon coin is-large"></i>
-      <p className="font-nes text-[#ffffff]">Loading...</p>
     </div>
   );
 }

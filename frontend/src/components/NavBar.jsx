@@ -40,8 +40,23 @@ export default function Navbar() {
           isOpen ? "open" : ""
         }`}
       >
+        {/* Top */}
+        <div className="nav-top">
+          <Link
+            to="/"
+            onClick={() => {
+              play();
+              setIsOpen(false);
+            }}
+          >
+            <button className="nes-btn is-primary w-full">
+              Home
+            </button>
+          </Link>
+        </div>
+
         {/* Top Buttons */}
-        <div className="flex flex-col gap-[32px] nav-buttons-container">
+        <div className="flex flex-col nav-buttons-container">
           <Link to="/home" onClick={() => { play(); setIsOpen(false); }}>
             <button className="nes-btn w-full is-normal">About Me</button>
           </Link>
@@ -149,7 +164,6 @@ export default function Navbar() {
           }
 
           .nav-buttons-container {
-            padding-top: 40px;
             gap: 32px;
             max-width: none;
           }
