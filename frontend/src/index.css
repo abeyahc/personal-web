@@ -257,3 +257,11 @@ body {
 a {
   color: #ffffff;
 }
+
+.nes-container > .title {
+  background-color: #0d0d0d !important;
+}
+
+.nes-container {
+  background-color: #0d0d0d !important;
+}
