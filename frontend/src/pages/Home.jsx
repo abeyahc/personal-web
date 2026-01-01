@@ -105,10 +105,21 @@ export default function Home() {
             <p className="title">Work Experience</p>
             <p>
               I currently work as a research and development intern at Sandia
-              National Laboratories, contributing to QUENDS through unit tests,
-              CI/CD pipelines, and documentation. I previously interned at Ames
+              National Laboratories, contributing to Quantification
+              of Uncertainty in ENsembles of Data Streams (QUENDS) through unit tests,
+              CI/CD pipelines, and documentation. I initially set up the Sphinx
+              Documentation of QUENDS shown <a
+              href="https://sandialabs.github.io/quends/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="underline hover:text-blue-400"
+            >
+              here
+            </a> and set up the coverage tests and software tutorials! I previously interned at Ames
               National Laboratory working with Perlmutter on NWChemEx
-              performance analysis.
+              with high performance computational analysis and used to work as a tutor
+              at my community college. I also had experience as a cybersecurity analyst intern
+              at the City of Stockton in California, which was pretty sick.
             </p>
           </div>
 
