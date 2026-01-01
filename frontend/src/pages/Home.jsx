@@ -101,9 +101,9 @@ export default function Home() {
           <div class="nes-container is-dark with-title w-full">
             <p class="title">Work Experience</p>
             <p>
-              I currently work as an Research and Development intern at Sandia National Laboratories at Livermore, CA!
+              I currently work as a research and development intern at Sandia National Laboratories at Livermore, CA!
               I help with the software engineering with our software called Quantification of Uncertainty
-              in ENsembles of Data Streams (QUENDS). I implement unit tests, set up and contributed to the Continuous
+              in ENsembles of Data Streams (QUENDS). I implement unit tests, set up and contribute to the Continuous
               Integration and Continuous Deployment pipeline, and contribute to the documentation of QUENDS. I previously
               worked as a tutor at my community college and interned at Ames National Laboratories with the high performance computer,
               Perlmutter. At Ames, I helped gather data to analyze the performance of NWChemEx using molecules, such as, 
