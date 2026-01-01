@@ -26,7 +26,9 @@
 
 .project-card {
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: transform 0.25s ease;
+  background-color: transparent;
+  color: var(--card-text);
 }
 
 /* ======================
@@ -37,7 +39,7 @@
   width: 100%;
   padding-bottom: 25px;
   display: flex;
-  justify-content: center; /* MOBILE */
+  justify-content: center;
   position: relative;
 }
 
@@ -68,8 +70,9 @@
   right: 8px;
   font-size: 12px;
   padding: 4px 8px;
-  background: rgba(0, 0, 0, 0.7);
-  border: 1px solid #666;
+  background: var(--badge-bg);
+  border: 1px solid var(--badge-border);
+  color: #fff;
 }
 
 /* ======================
@@ -81,15 +84,15 @@
   flex-wrap: wrap;
   gap: 12px;
   margin-bottom: 15px;
-  justify-content: center; /* MOBILE */
+  justify-content: center;
 }
 
 .project-tag {
   font-size: 13px;
   padding: 4px 8px;
-  border: 1px solid #666;
-  background: #1a1a1a;
-  color: #ccc;
+  border: 1px solid var(--border);
+  background: var(--tag-bg);
+  color: var(--tag-text);
 }
 
 /* Desktop tag alignment */
@@ -104,28 +107,28 @@
 ====================== */
 
 .project-info {
-  text-align: center; /* MOBILE */
+  text-align: center;
 }
 
 .project-title {
-  color: #fff;
+  color: var(--card-text);
   text-decoration: none;
+  font-weight: 600;
 }
 
 .project-title:hover {
   text-decoration: underline;
-  color: #e0e0e0;
 }
 
 .project-date {
   font-size: 12px;
-  color: #888;
+  color: var(--muted-text);
   margin-bottom: 8px;
 }
 
 .project-description {
   font-size: 14px;
-  color: #ccc;
+  color: var(--muted-text);
 }
 
 /* Desktop text alignment */

@@ -1,13 +1,16 @@
 import Navbar from "../components/NavBar";
 import { projects } from "../data/projects";
-import "./projects.css"
+import "./projects.css";
 
 export default function Projects() {
   return (
-    <div className="min-h-screen bg-[#242424]">
+    <div
+      className="min-h-screen"
+      style={{ backgroundColor: "var(--bg)", color: "var(--text)" }}
+    >
       <Navbar />
 
-      <div className="projects-content min-h-screen text-[#ffffff] p-8">
+      <div className="projects-content min-h-screen p-8">
         <h1 className="text-5xl font-bold mb-[20px]">
           Projects
         </h1>
@@ -15,7 +18,7 @@ export default function Projects() {
         <div className="projects-grid">
           {projects.map((project) => (
             <div key={project.id} className="project-card">
-              
+
               {/* Image */}
               <div className="project-image-wrapper">
                 <a

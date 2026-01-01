@@ -3,42 +3,37 @@ import { Typewriter } from "react-simple-typewriter";
 import { useState, useEffect } from "react";
 
 export default function Home() {
-
-  const photos = [
-    "/pfp.JPG",
-    "/pfp2.jpeg",
-    "/pfp3.jpeg",
-  ];
-
+  const photos = ["/pfp.JPG", "/pfp2.jpeg", "/pfp3.jpeg"];
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % photos.length);
-    }, 3000); // change photo every 3s
-
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#242424]">
+    <div className="min-h-screen">
       <Navbar />
 
-      <div className="home-content min-h-screen text-[#ffffff] flex justify-center pt-12">
+      <div className="home-content min-h-screen flex justify-center pt-12">
+        <div className="outer-wrap flex flex-col items-center w-full m-[30px] gap-[30px]">
 
-        {/* Outer container */}
-        <div className="flex flex-col items-center w-full m-[30px] gap-[30px]">
-
-          {/* Top section: Intro + Image */}
-          <div className="intro-section border-4 border-[#e0e0e0] bg-[#0d0d0d] 
-                          w-full mb-8">
-
-            {/* Left side (Intro Text) */}
+          {/* INTRO SECTION */}
+          <div
+            className="intro-section border-4 w-full"
+            style={{
+              backgroundColor: "var(--panel)",
+              borderColor: "var(--border)",
+            }}
+          >
+            {/* Text */}
             <div className="intro-text-block flex flex-col items-center">
-
-              {/* Typewriter text wrapper to stop shifting */}
               <div className="typewriter-wrapper">
-                <h1 className="intro-title text-[#00ff00] mb-2">
+                <h1 className="intro-title mb-2"
+                    style={{ color: "var(--terminal-green)" }}
+                >
                   <Typewriter
                     words={["Hello World!"]}
                     loop={false}
@@ -47,117 +42,105 @@ export default function Home() {
                     typeSpeed={150}
                     deleteSpeed={50}
                     delaySpeed={2000}
-                    cursorColor="#00ff00"
                   />
                 </h1>
               </div>
 
-              <p className="intro-subtitle mb-4">my name is</p>
+              <p className="intro-subtitle opacity-80 mb-4">
+                my name is
+              </p>
 
               <h2 className="intro-name leading-tight">
                 Abeyah <br /> Calpatura
               </h2>
             </div>
 
-            {/* Right side (Photo) */}
-            <div className="photo-container border-4 border-[#e0e0e0] flex-shrink-0">
+            {/* Photo */}
+            <div
+              className="photo-container border-4"
+              style={{ borderColor: "var(--border)" }}
+            >
               <img
                 key={photos[index]}
                 src={photos[index]}
                 alt="Profile"
-                className={`profile-photo fade-photo object-cover
-                  ${photos[index] === "/pfp2.jpeg" ? "pfp2-adjust" : ""}
-                `}
+                className={`profile-photo fade-photo object-cover ${
+                  photos[index] === "/pfp2.jpeg" ? "pfp2-adjust" : ""
+                }`}
               />
             </div>
           </div>
 
-          {/* About Me Box */}
-          <div className="about-section border-4 border-[#e0e0e0] bg-[#0d0d0d] flex-col w-full text-left">
+          {/* ABOUT */}
+          <div
+            className="about-section panel border-4 w-full text-left"
+            style={{
+              backgroundColor: "var(--panel)",
+              borderColor: "var(--border)",
+            }}
+          >
             <p className="about-text opacity-90">
-              <span className="text-[#00ffe1] font-bold">*</span> Hi! I'm Abeyah <span className="opacity-70"> (uh-bay-yuh)</span>! 
-              Currently, I'm a first-gen Filipina student as a senior earning my Bachelor's
-              in Computer Science at California Polytechnic University of San Luis Obispo!
-              I graduated from San Joaquin Delta College with an Associates in Mathematics and
-              Interdisciplinary Studies in Mathematics and Sciences in the Summer of 2024. 
+              <strong>*</strong> Hi! I'm Abeyah{" "}
+              <span className="opacity-70">(uh-bay-yuh)</span>! I’m a first-gen
+              Filipina senior earning my Bachelor’s in Computer Science at
+              California Polytechnic University of San Luis Obispo. I graduated
+              from San Joaquin Delta College with Associates in Mathematics and
+              Interdisciplinary Studies.
             </p>
-            <br />
 
-            {/* Fun facts heading */}
             <h4 className="fun-facts-heading font-semibold mt-4 mb-2">
-              <span className="text-[#00ffe1] font-bold">*</span> Fun Facts About Me!
+              <strong>*</strong> Fun Facts About Me!
             </h4>
 
-            {/* Fun facts list */}
             <ul className="fun-facts-list list-asterisk pl-6 space-y-2 opacity-90">
               <li>I love photography</li>
               <li>Played piano for 10+ years!</li>
               <li>I love drawing digital art</li>
               <li>Currently learning bass guitar</li>
             </ul>
-
           </div>
 
-          <div class="nes-container is-dark with-title w-full">
-            <p class="title">Work Experience</p>
+          {/* WORK EXPERIENCE */}
+          <div className="nes-container with-title w-full">
+            <p className="title">Work Experience</p>
             <p>
-              I currently work as a research and development intern at Sandia National Laboratories at Livermore, CA!
-              I help with the software engineering with our software called Quantification of Uncertainty
-              in ENsembles of Data Streams (QUENDS). I implement unit tests, set up and contribute to the Continuous
-              Integration and Continuous Deployment pipeline, and contribute to the documentation of QUENDS. I previously
-              worked as a tutor at my community college and interned at Ames National Laboratories with the high performance computer,
-              Perlmutter. At Ames, I helped gather data to analyze the performance of NWChemEx using molecules, such as, 
-              tetahydrofuran, h2o, and c60.
+              I currently work as a research and development intern at Sandia
+              National Laboratories, contributing to QUENDS through unit tests,
+              CI/CD pipelines, and documentation. I previously interned at Ames
+              National Laboratory working with Perlmutter on NWChemEx
+              performance analysis.
             </p>
           </div>
 
         </div>
-
       </div>
 
+      {/* PAGE-SPECIFIC STYLES */}
       <style>{`
-        /* Mobile styles (default) */
         .home-content {
           margin-left: 0;
         }
 
-        /* Prevent layout from shifting during typewriter animation */
-        .typewriter-wrapper {
-          display: inline-block;
-          min-width: 200px;
-          text-align: center;
+        .outer-wrap {
+          max-width: 1100px;
+          width: 100%;
         }
 
-        /* Stabilize entire intro text on mobile */
-        .intro-text-block {
-          width: 100%;
+        .typewriter-wrapper {
+          min-width: 200px;
           text-align: center;
         }
 
         .intro-section {
           padding: 40px 20px;
-          flex-direction: column;
           display: flex;
+          flex-direction: column;
           align-items: center;
-          text-align: center;
           gap: 30px;
-        }
-
-        .intro-title {
-          font-size: 1.75rem;
-        }
-
-        .intro-subtitle {
-          font-size: 1.2rem;
-        }
-
-        .intro-name {
-          font-size: 2rem;
+          text-align: center;
         }
 
         .photo-container {
-          margin-left: 0;
-          width: 100%;
           display: flex;
           justify-content: center;
         }
@@ -165,115 +148,29 @@ export default function Home() {
         .profile-photo {
           width: 100%;
           max-width: 350px;
-          height: auto;
-          aspect-ratio: 16/9;
+          aspect-ratio: 16 / 9;
         }
 
-        .about-section {
-          padding: 30px 20px;
-          max-width: 100%;
-        }
-
-        .about-text {
-          font-size: 1rem;
-          line-height: 1.8;
-        }
-
-        .fun-facts-heading {
-          font-size: 1.1rem;
-        }
-
-        .fun-facts-list {
-          font-size: 1rem;
-          line-height: 1.6;
-        }
-
-        /* Tablet styles */
-        @media (min-width: 768px) {
-          .intro-section {
-            padding: 50px 40px;
-          }
-
-          .intro-title {
-            font-size: 2rem;
-          }
-
-          .intro-subtitle {
-            font-size: 1.35rem;
-          }
-
-          .intro-name {
-            font-size: 2.25rem;
-          }
-
-          .profile-photo {
-            max-width: 400px;
-          }
-
-          .about-section {
-            padding: 35px 50px;
-          }
-        }
-
-        /* Desktop styles */
         @media (min-width: 1024px) {
           .home-content {
             margin-left: 300px;
           }
 
-          /* Restore original text alignment on desktop */
-          .intro-text-block {
-            text-align: left;
-            align-items: flex-start;
-          }
-
           .intro-section {
-            padding: 80px 90px;
             flex-direction: row;
             justify-content: space-between;
+            align-items: center;
+            padding: 60px 70px;
             text-align: left;
           }
 
-          .intro-title {
-            font-size: 2rem;
-          }
-
-          .intro-subtitle {
-            font-size: 1.5rem;
-          }
-
-          .intro-name {
-            font-size: 2.5rem;
-          }
-
-          .photo-container {
-            margin-left: 40px;
-            width: auto;
+          .intro-text-block {
+            align-items: flex-start;
           }
 
           .profile-photo {
             width: 440px;
             height: 250px;
-            max-width: none;
-          }
-
-          .about-section {
-            padding: 35px 90px;
-            max-width: 100%;
-          }
-
-          .about-text {
-            font-size: 1.05rem;
-            line-height: 2;
-          }
-
-          .fun-facts-heading {
-            font-size: 1.25rem;
-          }
-
-          .fun-facts-list {
-            font-size: 1.05rem;
-            line-height: 1.8;
           }
         }
       `}</style>
