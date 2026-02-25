@@ -138,7 +138,16 @@ export default function Home() {
         }
 
         .typewriter-wrapper {
-          min-width: 200px;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+
+        .intro-title {
+          width: 12ch;
+          white-space: nowrap;
+          min-height: 1.2em;
+          margin: 0 auto;
           text-align: center;
         }
 
