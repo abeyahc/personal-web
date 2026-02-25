@@ -163,6 +163,8 @@ export default function Home() {
         .photo-container {
           display: flex;
           justify-content: center;
+          background: #000;
+          overflow: hidden;
         }
 
         .profile-photo {
