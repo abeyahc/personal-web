@@ -4,7 +4,7 @@ const portfolioImages = import.meta.glob("./portfolio/*.jpg", {
 });
 
 const photos = [
-  { src: portfolioImages["./portfolio/DSC04221.jpg"], width: 1690, height: 2000 },
+  { src: portfolioImages["./portfolio/DSC04221.jpg"], width: 1690, height: 2000, description: "a photo of Ivana :)" },
   { src: portfolioImages["./portfolio/DSC04243.jpg"], width: 1333, height: 2000 },
   { src: portfolioImages["./portfolio/DSC04395.jpg"], width: 1333, height: 2000 },
   { src: portfolioImages["./portfolio/DSC04396.jpg"], width: 1333, height: 2000 },

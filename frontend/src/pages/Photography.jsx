@@ -4,6 +4,8 @@ import { MasonryPhotoAlbum } from "react-photo-album";
 import "react-photo-album/masonry.css";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import Captions from "yet-another-react-lightbox/plugins/captions";
+import "yet-another-react-lightbox/plugins/captions.css";
 import photos from "./portfolio.js";
 
 export default function Photography() {
@@ -22,6 +24,7 @@ export default function Photography() {
           open={index >= 0}
           index={index}
           close={() => setIndex(-1)}
+          plugins={[Captions]}
         />
       </div>
 
