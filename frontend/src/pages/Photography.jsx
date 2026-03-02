@@ -1,29 +1,40 @@
+import { useState } from "react";
 import Navbar from "../components/NavBar";
+import { MasonryPhotoAlbum } from "react-photo-album";
+import "react-photo-album/masonry.css";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+import photos from "./portfolio.js";
 
 export default function Photography() {
-    return (
-      <div className="min-h-screen">
-        <Navbar />
-        <div className="photography-content min-h-screen flex items-center justify-center">
-          <div className="flex flex-col items-center justify-center text-center">
-            <h1 className="text-2xl mb-4">This is the Photography Page</h1>
-            <p className="text-sm">still a work in progress :D</p>
-          </div>
-        </div>
+  const [index, setIndex] = useState(-1);
 
-        <style>{`
-          /* Mobile styles (default) */
-          .photography-content {
-            margin-left: 0;
-          }
-
-          /* Desktop styles */
-          @media (min-width: 1024px) {
-            .photography-content {
-              margin-left: 300px;
-            }
-          }
-        `}</style>
+  return (
+    <div className="min-h-screen">
+      <Navbar />
+      <div className="photography-content p-[20px]">
+        <MasonryPhotoAlbum
+          photos={photos}
+          onClick={({ index }) => setIndex(index)}
+        />
+        <Lightbox
+          slides={photos}
+          open={index >= 0}
+          index={index}
+          close={() => setIndex(-1)}
+        />
       </div>
-    );
+
+      <style>{`
+        .photography-content {
+          margin-left: 0;
+        }
+        @media (min-width: 1024px) {
+          .photography-content {
+            margin-left: 300px;
+          }
+        }
+      `}</style>
+    </div>
+  );
 }
