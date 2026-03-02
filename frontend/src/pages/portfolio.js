@@ -28,4 +28,4 @@ const photos = [
   { src: portfolioImages["./portfolio/shadow4.jpg"], width: 2000, height: 1333 },
 ];
 
-export default photos;
+export default [...photos].reverse();
