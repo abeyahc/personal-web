@@ -20,6 +20,12 @@ const photos = [
   { src: portfolioImages["./portfolio/DSC05303.jpg"], width: 1652, height: 2000 },
   { src: portfolioImages["./portfolio/DSC05348.jpg"], width: 2000, height: 2000 },
   { src: portfolioImages["./portfolio/DSC05384.jpg"], width: 1333, height: 2000 },
+  { src: portfolioImages["./portfolio/__9_00253.jpg"], width: 2000, height: 1333, title: "film", description: "climbing trip at Yosemite"  },
+  { src: portfolioImages["./portfolio/_12_00256.jpg"], width: 2000, height: 1333, title: "film", description: "climbing trip at Yosemite"  },
+  { src: portfolioImages["./portfolio/_26_00270.jpg"], width: 2000, height: 1333, title: "film", description: "climbing trip at Bishop"  },
+  { src: portfolioImages["./portfolio/abstract1.jpg"], width: 1333, height: 2000 },
+  { src: portfolioImages["./portfolio/abstract2.jpg"], width: 2000, height: 2000 },
+  { src: portfolioImages["./portfolio/shadow4.jpg"], width: 2000, height: 1333 },
 ];
 
 export default photos;
