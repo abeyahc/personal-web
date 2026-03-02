@@ -112,7 +112,7 @@ export default function Home() {
               href="https://sandialabs.github.io/quends/"
               target="_blank"
               rel="noopener noreferrer"
-              class="underline hover:text-blue-400"
+              className="underline hover:text-blue-400"
             >
               here
             </a> and set up the coverage tests and software tutorials! I previously interned at Ames
