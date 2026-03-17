@@ -19,6 +19,8 @@ export default function Load() {
     clickSound.current.volume = 0.3; // optional NES-style subtle click
     clickSound.current.play();
 
+    const hasMusicPreference = Boolean(localStorage.getItem("musicPreference"));
+
     setIsZooming(true);
 
     setTimeout(() => {
@@ -28,7 +30,7 @@ export default function Load() {
 
     // Navigate after animation finishes
     setTimeout(() => {
-      navigate("/home");
+      navigate(hasMusicPreference ? "/home" : "/music");
     }, 800); // match animation duration
   };
 

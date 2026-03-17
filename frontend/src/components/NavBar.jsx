@@ -1,12 +1,18 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X, Sun, Moon, Volume2, VolumeX} from "lucide-react";
 import click from "../assets/button_click.mp3";
+import bgMusic from "../assets/music.mp3";
+import { musicPlayer } from "../utils/music";
 import "nes.css/css/nes.min.css";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const audioRef = useRef(new Audio(click));
+
+  const [musicOn, setMusicOn] = useState(() => {
+    return localStorage.getItem("musicPreference") === "enabled";
+  });
 
   const play = () => {
     audioRef.current.currentTime = 0;
@@ -20,11 +26,30 @@ export default function Navbar() {
     }
   }, []);
 
+  useEffect(() => {
+    if (musicOn && !musicPlayer.isPlaying()) {
+      musicPlayer.start(bgMusic);
+    }
+  }, []);
+
   const toggleTheme = () => {
     play();
     const root = document.documentElement;
     const isDark = root.classList.toggle("dark");
     localStorage.setItem("theme", isDark ? "dark" : "light");
+  };
+
+  const toggleMusic = () => {
+  play();
+  if (musicOn) {
+    musicPlayer.stop();
+    localStorage.setItem("musicPreference", "disabled");
+    setMusicOn(false);
+  } else {
+    musicPlayer.start(bgMusic);
+    localStorage.setItem("musicPreference", "enabled");
+    setMusicOn(true);
+  }
   };
 
   const isDark = document.documentElement.classList.contains("dark");
@@ -62,7 +87,7 @@ export default function Navbar() {
         }}
       >
         {/* Top */}
-        <div className="nav-top flex gap-[30px] w-full">
+        <div className="nav-top flex gap-[23px] w-full">
           <Link
             to="/"
             onClick={() => {
@@ -79,6 +104,15 @@ export default function Navbar() {
           >
             {isDark ? <Sun size={18} /> : <Moon size={18} />}
           </button>
+
+                  <button
+            onClick={toggleMusic}
+            className={`nes-btn w-full ${musicOn ? "is-success" : "is-error"}`}
+          >
+            <span className="flex items-center justify-center gap-2">
+              {musicOn ? <Volume2 size={20} /> : <VolumeX size={20} />}
+            </span>
+        </button>
         </div>
 
         {/* Nav Buttons */}
@@ -108,6 +142,7 @@ export default function Navbar() {
             <i className="nes-icon instagram is-medium"></i>
           </a>
         </div>
+
       </nav>
 
       {/* =====================================================
