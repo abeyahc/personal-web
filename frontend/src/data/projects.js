@@ -20,5 +20,16 @@ export const projects = [
     description: "I worked on the UI/UX on Figma and designed the website for the 4 Seasons Golf Tour",
     link: "https://4sgtour.com/",
     tags: ["UI/UX", "Figma", "CSS"]
+  },
+    {
+    id: 3,
+    title: "Melodious",
+    date: "Fall 2025 - Winter 2026",
+    images: [
+      "/melodious.png",
+    ],
+    description: "I worked on the UI/UX on Figma and implemented the profiles, events, and matching portion of our website",
+    link: "https://github.com/CSC-308-309/CSC308",
+    tags: ["UI/UX", "Figma", "CSS", "React", "Tailwind"]
   }
 ];
