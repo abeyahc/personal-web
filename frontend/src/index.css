@@ -171,3 +171,14 @@ a {
 strong {
   color: var(--asterisk-blue);
 }
+
+.nav-top {
+  width: 100%;
+  max-width: 250px;
+}
+
+@media (min-width: 1024px) {
+  .nav-top {
+    max-width: none;
+  }
+}
