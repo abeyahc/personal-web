@@ -4,7 +4,6 @@ const portfolioImages = import.meta.glob("./portfolio/*.jpg", {
 });
 
 const photos = [
-  { src: portfolioImages["./portfolio/26A_00151.jpg"], width: 2400, height: 1600 },
   { src: portfolioImages["./portfolio/DSC04221.jpg"], width: 1690, height: 2000, description: "a photo of Ivana :)" },
   { src: portfolioImages["./portfolio/DSC04243.jpg"], width: 1333, height: 2000 },
   { src: portfolioImages["./portfolio/DSC04395.jpg"], width: 1333, height: 2000 },
@@ -31,7 +30,8 @@ const photos = [
   { src: portfolioImages["./portfolio/DSC05457.jpg"], width: 1271, height: 2000, description: "Lake Tahoe with Friends", title: "2/28/26"},
   { src: portfolioImages["./portfolio/DSC05611.jpg"], width: 2000, height: 1333, description: "pismo beach"},
   { src: portfolioImages["./portfolio/DSC05683.jpg"], width: 1333, height: 2000, description: "cute bird at pismo beach"},
-  { src: portfolioImages["./portfolio/_25_00225.jpg"], width: 1600, height: 2400 ,title: "film", description: "botanical garden in seattle"   },
+  { src: portfolioImages["./portfolio/_25_00225.jpg"], width: 1600, height: 2400 ,title: "film", description: "botanical garden in seattle"},
+  { src: portfolioImages["./portfolio/26A_00151.jpg"], width: 1600, height: 2400, description: "red panda at atascadero zoo!!", title: "film",},
 
 ];
 
